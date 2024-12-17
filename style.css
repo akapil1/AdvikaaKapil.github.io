@@ -279,3 +279,119 @@ section {
     color: #fff;
     cursor: pointer;
 }
+
+/* General Styling for the Work Experience Section */
+.work-experience-section {
+    padding: 50px 20px;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+/* Timeline Container (Horizontal Scroll) */
+.timeline-container {
+    overflow-x: auto; /* Ensure that overflow is allowed only in the horizontal direction */
+    padding: 20px 0;
+    position: relative;
+    display: flex;
+    justify-content: flex-start; /* Ensure content starts at the left */
+    align-items: center;
+    scroll-behavior: smooth; /* Smooth scrolling for sliding effect */
+}
+
+/* Timeline */
+.timeline {
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+}
+
+/* Timeline Item */
+.timeline-item {
+    width: 300px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Styling */
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Timeline Year */
+.timeline-year {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff7b93;
+}
+
+/* Timeline Content */
+.timeline-content h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Timeline Date */
+.timeline-date {
+    font-size: 14px;
+    color: #666;
+}
+
+/* List Styling */
+ul {
+    padding-left: 20px;
+    text-align: left;
+}
+
+ul li {
+    font-size: 14px;
+    color: #444;
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: #ff7b93;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transform: translateY(-50%);
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+/* Arrow Hover Effect */
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .timeline-item {
+        width: 250px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
