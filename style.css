@@ -1,0 +1,281 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #fefaf0; /* Beige background */
+    color: #333;
+    padding-top: 80px; /* Adds space for fixed navbar */
+}
+
+/* Navigation Bar Styling */
+header {
+    background: linear-gradient(to right, #FFB6C1, #FFDAB9, #FFFAE3); /* Gradient background */
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Align to the top of the viewport */
+    left: 0; /* Align to the left of the viewport */
+    width: 100%; /* Make it span the full width */
+    display: flex;
+    justify-content: center; /* Center-align navigation tools */
+    align-items: center;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    z-index: 1000; /* Ensure the navbar stays on top of other elements */
+}
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem; /* Space between links */
+    list-style: none; /* Remove bullets */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333; /* Dark text color */
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #FFDDD2; /* Light background on hover */
+    color: #D64550;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    padding-top: 80px; /* Add padding to offset the fixed header */
+}
+
+/* Add padding to sections to prevent content being hidden under navbar */
+section {
+    padding: 5rem 2rem; /* Extra padding to account for fixed navbar */
+    margin-top: 80px; /* Ensures content starts below the header */
+}
+
+/* Home Section Styling */
+.home-section {
+    display: flex; /* Aligns text and image side by side */
+    justify-content: space-between; /* Space between text and image */
+    align-items: center; /* Vertically center content */
+    padding: 4rem 8rem;
+    background-color: #fff7f0; /* Light peach background */
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem; /* Space between text and image */
+}
+
+/* Biography Text Styling */
+.bio {
+    flex: 1; /* Takes remaining space */
+    text-align: left;
+}
+
+.bio h2 {
+    font-family: 'Playfair Display', serif;
+    color: #ff8c8c; /* Peach heading color */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.bio p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Resume Button Styling */
+
+.resume-container {
+    margin-top: 1.5rem; /* Adds spacing above the button */
+}
+
+.download-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff8c8c; /* Peach button color */
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #f56a6a; /* Darker peach on hover */
+}
+
+
+.scroll-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff8c8c; /* Peach button */
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background-color: #f56a6a; /* Darker peach on hover */
+}
+
+/* Profile Photo Styling */
+.profile img {
+    width: 300px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 5px solid #ffddd2; /* Consistent border color */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center align links */
+        gap: 1rem;
+    }
+    
+    header {
+        flex-direction: column; /* Stack logo and links vertically */
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .home-content {
+        flex-direction: column-reverse; /* Stack image and text vertically */
+        text-align: center;
+    }
+    
+    .profile img {
+        width: 250px;
+        height: 350px;
+    }
+}  
+
+.download-btn {
+    display: inline-block;
+    background-color: #FF6F61; /* Coral Red */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+    background-color: #E6534C; /* Darker Coral Red */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+.resume-container {
+    text-align: center; /* Center the button */
+    margin: 2rem 0; /* Add spacing above and below */
+}
+
+/* Skills Section Styling */
+.skills-section {
+    background-color: #f7f9fc;
+    padding: 4rem 8rem;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Technical Skills Section */
+.skills-container {
+    margin-bottom: 3rem;
+}
+
+.skills-heading {
+    font-size: 1.8rem;
+    color: #ff8c8c;
+    margin-bottom: 1.5rem;
+}
+
+.skills-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.skill-card {
+    background: #fff;
+    border: 2px solid #ffddd2;
+    border-radius: 8px;
+    width: 250px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Soft Skills Section */
+.soft-skills-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.soft-skills-list li {
+    background: #ffddd2;
+    color: #333;
+    margin: 0.5rem auto;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    width: 60%;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.soft-skills-list li:hover {
+    background-color: #f56a6a;
+    color: #fff;
+    cursor: pointer;
+}
