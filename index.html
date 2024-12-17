@@ -98,102 +98,152 @@
 <section id="workexperience" class="work-experience-section">
     <h2>Work Experience</h2>
     <div class="timeline-container">
-
         <!-- Timeline -->
         <div class="timeline">
             <!-- Writing Coach (Current) -->
-            <div class="timeline-item">
-                <div class="card">
-                    <div class="timeline-year">Current</div>
-                    <div class="timeline-content">
-                        <h3>Writing Coach</h3>
-                        <p class="timeline-date">July, 2023 - Present</p>
-                        <p><strong>Arizona State University</strong></p>
-                        <ul>
-                            <li>Assisted more than 500 students in improving writing skills and grades.</li>
-                            <li>Spearheaded discussions and played a pivotal role in the AI writing tools workshop.</li>
-                            <li>Organized bi-weekly seminars on writing techniques, research methodologies, and citation standards.</li>
-                            <li>Received positive feedback for explaining complex concepts clearly to students, peers, and faculty.</li>
-                        </ul>
-                    </div>
+            <div class="timeline-item" id="writing-coach" onclick="toggleDetails('writing-coach')">
+                <div class="timeline-dot"></div>
+                <div class="cloud-box">
+                    <p class="job-title">Writing Coach</p>
+                    <p class="timeline-date">July, 2023 - Present</p>
                 </div>
             </div>
 
             <!-- Marketing Designer Intern -->
-            <div class="timeline-item">
-                <div class="card">
-                    <div class="timeline-year">May - August, 2024</div>
-                    <div class="timeline-content">
-                        <h3>Marketing Designer Intern</h3>
-                        <p class="timeline-date">May - August, 2024</p>
-                        <p><strong>DineLocal</strong></p>
-                        <ul>
-                            <li>Collaborated with restaurant owners to design and create marketing assets tailored to their needs.</li>
-                            <li>Developed engaging visual content for the Dine Local app, enhancing brand visibility and customer engagement.</li>
-                            <li>Addressed and resolved restaurant owners' concerns with professional and timely communication.</li>
-                            <li>Ensured consistent branding and messaging across all marketing channels through team collaboration.</li>
-                        </ul>
-                    </div>
+            <div class="timeline-item" id="marketing-designer" onclick="toggleDetails('marketing-designer')">
+                <div class="timeline-dot"></div>
+                <div class="cloud-box">
+                    <p class="job-title">Marketing Designer Intern</p>
+                    <p class="timeline-date">May - August, 2024</p>
                 </div>
             </div>
 
             <!-- Cloud Infrastructure Intern -->
-            <div class="timeline-item">
-                <div class="card">
-                    <div class="timeline-year">April - May, 2024</div>
-                    <div class="timeline-content">
-                        <h3>Cloud Infrastructure Intern</h3>
-                        <p class="timeline-date">April - May, 2024</p>
-                        <p><strong>Verizon</strong></p>
-                        <ul>
-                            <li>Engineered and optimized a VPN product with redundancy, resiliency, and least-privilege principles using advanced Python.</li>
-                            <li>Executed rigorous cloud-native infrastructure testing focused on security and performance.</li>
-                            <li>Delivered in-depth presentations on cloud security strategies to enhance team expertise and collaboration.</li>
-                        </ul>
-                    </div>
+            <div class="timeline-item" id="cloud-infrastructure" onclick="toggleDetails('cloud-infrastructure')">
+                <div class="timeline-dot"></div>
+                <div class="cloud-box">
+                    <p class="job-title">Cloud Infrastructure Intern</p>
+                    <p class="timeline-date">April - May, 2024</p>
                 </div>
             </div>
 
             <!-- Data Analyst Intern -->
-            <div class="timeline-item">
-                <div class="card">
-                    <div class="timeline-year">June - July, 2023</div>
-                    <div class="timeline-content">
-                        <h3>Data Analyst Intern</h3>
-                        <p class="timeline-date">June - July, 2023</p>
-                        <p><strong>LTIMindtree</strong></p>
-                        <ul>
-                            <li>Proficient in data extraction using REST APIs and RDBMS with a strong analytical mindset.</li>
-                            <li>Experienced with Kafka, microservices vs monolithic architectures, and AngularJS for web interfaces.</li>
-                            <li>Worked with H2 Database, Java APIs, and JPA for CRUD operations, demonstrating technical adeptness.</li>
-                            <li>Showcased dedication in database and software evaluation for coding viability.</li>
-                        </ul>
-                    </div>
+            <div class="timeline-item" id="data-analyst" onclick="toggleDetails('data-analyst')">
+                <div class="timeline-dot"></div>
+                <div class="cloud-box">
+                    <p class="job-title">Data Analyst Intern</p>
+                    <p class="timeline-date">June - July, 2023</p>
                 </div>
             </div>
 
             <!-- UI/UX Designer Intern -->
-            <div class="timeline-item">
-                <div class="card">
-                    <div class="timeline-year">May - June, 2023</div>
-                    <div class="timeline-content">
-                        <h3>UI/UX Designer Intern</h3>
-                        <p class="timeline-date">May - June, 2023</p>
-                        <p><strong>Centre for Railway Information Systems</strong></p>
-                        <ul>
-                            <li>Led cross-functional projects, integrating ticket systems with the national digital payment gateway.</li>
-                            <li>Leveraged Tableau and Google Analytics for UI enhancements in the Freight Operations System.</li>
-                            <li>Proficient in Adobe XD and Sketch for high-fidelity prototyping.</li>
-                            <li>Expertise in comprehensive user research to inform design decisions.</li>
-                        </ul>
-                    </div>
+            <div class="timeline-item" id="uiux-designer" onclick="toggleDetails('uiux-designer')">
+                <div class="timeline-dot"></div>
+                <div class="cloud-box">
+                    <p class="job-title">UI/UX Designer Intern</p>
+                    <p class="timeline-date">May - June, 2023</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Experience Details Modal -->
+    <div id="experience-details" class="experience-details">
+        <div class="modal-content" id="experience-card">
+            <!-- Content will be dynamically inserted -->
+        </div>
+    </div>
 </section>
+
+<section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certifications-slider">
+
+        <!-- Track for the Slider -->
+        <div class="certifications-track">
+            <!-- Stanford -->
+            <div class="certification-card">
+                <div class="card-header" style="background-image: url('images/stanford-bg.jpg');">
+                    <h3>Stanford</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Specialization in Machine Learning</h4>
+                    <ul>
+                        <li>Build and train ML models with NumPy, scikit-learn, and TensorFlow for classification and prediction tasks</li>
+                        <li>Implement decision trees, tree ensembles, clustering, anomaly detection, and recommender systems</li>
+                        <li>Apply ML development best practices for efficient training, evaluation, and deployment</li>
+                    </ul>
+                    <a href="images/stanford_ml.jpg" download="Stanford_ML_Certificate.pdf" class="view-btn">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Microsoft Generative AI -->
+            <div class="certification-card">
+                <div class="card-header" style="background-image: url('images/microsoft-bg.jpg');">
+                    <h3>Microsoft</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Career Essentials in Generative AI</h4>
+                    <ul>
+                        <li>Understand key concepts and technologies behind Artificial Intelligence and Generative AI</li>
+                        <li>Learn about the ethical implications and societal impact of using Generative AI tools</li>
+                        <li>Develop skills to apply Generative AI models effectively in real-world scenarios</li>
+                    </ul>
+                    <a href="images/microsoft_genai.jpg" download="Microsoft_GenAI_Certificate.pdf" class="view-btn">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Microsoft Data Analysis -->
+            <div class="certification-card">
+                <div class="card-header" style="background-image: url('images/microsoft-bg.jpg');">
+                    <h3>Microsoft</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Career Essentials in Data Analysis</h4>
+                    <ul>
+                        <li>Build foundational data analysis skills</li>
+                        <li>Learn to effectively use essential software tools like Excel, Power BI, and SQL for data manipulation, management, and visualization, enhancing your analytical skills</li>
+                        <li>Master data visualization methods to present and support data-driven decision-making</li>
+                    </ul>
+                    <a href="images/microsoft_data_analysis.jpg" download="Microsoft_Data_Analysis_Certificate.pdf" class="view-btn">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="certification-card">
+                <div class="card-header" style="background-image: url('images/github-bg.jpg');">
+                    <h3>GitHub</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Career Essentials in GitHub Professional</h4>
+                    <ul>
+                        <li>Gained proficiency in creating automations using GitHub Actions to streamline workflows</li>
+                        <li>Explored GitHub Copilot to enhance coding efficiency with AI-driven suggestions</li>
+                        <li>Applied GitHub features through real-world projects, strengthening my developer portfolio and job market readiness</li>
+                    </ul>
+                    <a href="images/github_professional.jpg" download="GitHub_Professional_Certificate.pdf" class="view-btn">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Edureka -->
+            <div class="certification-card">
+                <div class="card-header" style="background-image: url('images/edureka-bg.jpg');">
+                    <h3>Edureka</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Applications of Generative AI in Marketing Analysis</h4>
+                    <ul>
+                        <li>Developed proficiency in applying Generative AI for advanced marketing analytics</li>
+                        <li>Mastered responsible AI use by addressing ethical considerations and privacy concerns</li>
+                        <li>Learned to leverage AI-powered tools for actionable marketing insights and improved decision-making</li>
+                    </ul>
+                    <a href="images/edureka_genai.jpg" download="Edureka_GenAI_Certificate.pdf" class="view-btn">View Certificate</a>
+                </div>
+            </div>
+        </div>
+</section>
+
 
 <footer>
     <p>&copy; 2024 Advikaa Kapil. All Rights Reserved.</p>
 </footer>
-
