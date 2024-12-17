@@ -280,118 +280,237 @@ section {
     cursor: pointer;
 }
 
-/* General Styling for the Work Experience Section */
+/* work experience Section */
 .work-experience-section {
-    padding: 50px 20px;
-    background-color: #f4f4f9;
+    position: relative;
+    padding: 40px 15px;
+    background-color: #f6edef;
+}
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
+    border-inline: 4px dashed #ba4e5e;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin: 40px 0;
+    transition: transform 0.3s ease;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 3px dashed #ba4e5e;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cloud-box {
+    position: relative;
+    background-color: #f56a6a;  /* Dark shade for minimized state */
+    padding: 10px;
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, background-color 0.3s ease;
+    transform: scale(1);
+}
+
+.cloud-box .job-title {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.cloud-box .timeline-date {
+    font-size: 12px;
+    color: white;
+}
+
+.timeline-item.active .cloud-box {
+    transform: scale(1.5);
+    opacity: 1;
+    width: 250px;
+    background-color: #ee6b6b;  /* Light green shade for enlarged state */
+}
+
+.timeline-item .cloud-box {
+    padding: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.experience-details {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 999;
+}
+
+.experience-details .modal-content {
+    background-color: rgb(246, 235, 235);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
     text-align: center;
 }
 
-/* Timeline Container (Horizontal Scroll) */
-.timeline-container {
-    overflow-x: auto; /* Ensure that overflow is allowed only in the horizontal direction */
-    padding: 20px 0;
-    position: relative;
-    display: flex;
-    justify-content: flex-start; /* Ensure content starts at the left */
-    align-items: center;
-    scroll-behavior: smooth; /* Smooth scrolling for sliding effect */
+.close-btn {
+    cursor: pointer;
+    margin-top: 10px;
+    color: #1f32bd;
 }
 
-/* Timeline */
-.timeline {
-    display: flex;
-    gap: 30px;
-    flex-wrap: nowrap;
+/* Certifications Section */
+#certifications {
+    background-color: #fdf4f2; /* Light pink */
+    padding: 60px 20px;
+    text-align: center;
+    position: relative; /* Keep the title in place while scrolling */
+    z-index: 5; /* Ensure the title stays on top */
 }
 
-/* Timeline Item */
-.timeline-item {
+#certifications h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: #cc6a6a; /* Deep peach */
+    position: sticky; /* Keeps the title fixed while scrolling */
+    top: 60px; /* Adjust this value to keep the title visible */
+    z-index: 2; /* Ensure title is above the certification cards */
+}
+
+.certifications-container {
+    overflow-x: scroll;
+    padding-bottom: 10px; /* Ensure space for the scrollbar */
+}
+
+.certifications-track {
+    display: flex;
+    gap: 20px;
+    padding: 5px;
+    scroll-behavior: smooth;
+    width: 80%;
+}
+
+.certification-card {
+    background-color: #fef7f6; /* Peachy Beige */
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     width: 300px;
     flex-shrink: 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Card Styling */
-.card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover Effect */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-/* Timeline Year */
-.timeline-year {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #ff7b93;
-}
-
-/* Timeline Content */
-.timeline-content h3 {
-    color: #333;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-/* Timeline Date */
-.timeline-date {
-    font-size: 14px;
-    color: #666;
-}
-
-/* List Styling */
-ul {
-    padding-left: 20px;
     text-align: left;
+    position: relative; /* Set to relative to position the button at the bottom */
+    padding-bottom: 30px; /* Extra padding to ensure space for button */
 }
 
-ul li {
-    font-size: 14px;
-    color: #444;
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Arrows */
-.arrow {
+.card-header {
+    padding:50px 10px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ed838a;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h4 {
+    font-size: 1.25rem;
+    color: #a64b4b; /* Rich peach for better visibility */
+    font-weight: bold;
+    margin-bottom: 5px; /* Reduced gap between the course title and institute */
+    text-transform: uppercase;
+    text-align: center; /* Ensures title alignment */
+}
+
+.card-body p {
+    font-size: 1rem;
+    color: #5e4b4b; /* Subtle shade for the institute text */
+    text-align: center; /* Aligns the institute name to the center */
+    margin-top: 0; /* Removes unnecessary space at the top */
+    margin-bottom: 10px; /* Keeps space below institute consistent */
+}
+
+.card-body ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card-body ul li {
+    font-size: 0.9rem;
+}
+
+.view-btn {
+    display: inline-block;
+    background-color: #cc6a6a; /* Deep peach */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
     position: absolute;
-    top: 50%;
-    font-size: 30px;
-    color: #ff7b93;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 2;
-    transform: translateY(-50%);
+    bottom: 20px; /* Positions the button 20px from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the button horizontally */
 }
 
-.arrow.right {
-    right: 10px;
+.view-btn:hover {
+    background-color: #a64b4b; /* Slightly darker peach */
 }
 
-/* Arrow Hover Effect */
-.arrow:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+/* Optional: Styling the scrollbar */
+.certifications-container::-webkit-scrollbar {
+    height: 8px;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .timeline-item {
-        width: 250px;
-    }
+.certifications-container::-webkit-scrollbar-thumb {
+    background-color: #cc6a6a; /* Deep peach */
+    border-radius: 10px;
+}
 
-    .card {
-        padding: 15px;
-    }
+.certifications-container::-webkit-scrollbar-track {
+    background-color: #fdf4f2; /* Light pink */
 }
