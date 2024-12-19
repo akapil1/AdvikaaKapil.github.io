@@ -9,19 +9,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    
+<!-- Navigation Bar -->
 <header>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#skills">Skills</a>
-            <a href="#workexperience">Work Experience</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#awards">Awards</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+    <div class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="logo">
+        <div id="hamburger-menu" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+    </div>
+    <nav id="nav-links" class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#exposure">Exposure</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#awards">Awards</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
+
 <!-- Home Section -->
 <section id="home" class="home-section">
     <div class="home-content">
@@ -95,65 +105,64 @@
     </div>
 </section>
 
-<section id="workexperience" class="work-experience-section">
-    <h2>Work Experience</h2>
+<section id="exposure" class="exposure-section">
+    <h2>Exposure</h2>
     <div class="timeline-container">
-        <!-- Timeline -->
         <div class="timeline">
-            <!-- Writing Coach (Current) -->
+            <!-- Writing Coach (Top) -->
             <div class="timeline-item" id="writing-coach" onclick="toggleDetails('writing-coach')">
-                <div class="timeline-dot"></div>
-                <div class="cloud-box">
+                <div class="cloud-box top">
                     <p class="job-title">Writing Coach</p>
                     <p class="timeline-date">July, 2023 - Present</p>
                 </div>
+                <div class="timeline-dot"></div>
             </div>
 
-            <!-- Marketing Designer Intern -->
+            <!-- Marketing Designer (Bottom) -->
             <div class="timeline-item" id="marketing-designer" onclick="toggleDetails('marketing-designer')">
                 <div class="timeline-dot"></div>
-                <div class="cloud-box">
+                <div class="cloud-box bottom">
                     <p class="job-title">Marketing Designer Intern</p>
                     <p class="timeline-date">May - August, 2024</p>
                 </div>
             </div>
 
-            <!-- Cloud Infrastructure Intern -->
+            <!-- Cloud Infrastructure (Top) -->
             <div class="timeline-item" id="cloud-infrastructure" onclick="toggleDetails('cloud-infrastructure')">
-                <div class="timeline-dot"></div>
-                <div class="cloud-box">
+                <div class="cloud-box top">
                     <p class="job-title">Cloud Infrastructure Intern</p>
                     <p class="timeline-date">April - May, 2024</p>
                 </div>
+                <div class="timeline-dot"></div>
             </div>
 
-            <!-- Data Analyst Intern -->
+            <!-- Data Analyst (Bottom) -->
             <div class="timeline-item" id="data-analyst" onclick="toggleDetails('data-analyst')">
                 <div class="timeline-dot"></div>
-                <div class="cloud-box">
+                <div class="cloud-box bottom">
                     <p class="job-title">Data Analyst Intern</p>
                     <p class="timeline-date">June - July, 2023</p>
                 </div>
             </div>
 
-            <!-- UI/UX Designer Intern -->
+            <!-- UI/UX Designer (Top) -->
             <div class="timeline-item" id="uiux-designer" onclick="toggleDetails('uiux-designer')">
-                <div class="timeline-dot"></div>
-                <div class="cloud-box">
+                <div class="cloud-box top">
                     <p class="job-title">UI/UX Designer Intern</p>
                     <p class="timeline-date">May - June, 2023</p>
                 </div>
+                <div class="timeline-dot"></div>
             </div>
         </div>
     </div>
-
-    <!-- Experience Details Modal -->
-    <div id="experience-details" class="experience-details">
-        <div class="modal-content" id="experience-card">
-            <!-- Content will be dynamically inserted -->
-        </div>
-    </div>
 </section>
+
+<!-- Experience Details Modal -->
+<div id="experience-details" class="experience-details">
+    <div class="modal-content" id="experience-card">
+        <!-- Content dynamically inserted -->
+    </div>
+</div>
 
 <section id="certifications">
     <h2>Certifications</h2>
@@ -173,7 +182,7 @@
                         <li>Implement decision trees, tree ensembles, clustering, anomaly detection, and recommender systems</li>
                         <li>Apply ML development best practices for efficient training, evaluation, and deployment</li>
                     </ul>
-                    <a href="images/stanford_ml.jpg" view="Stanford_ML_Certificate" class="view-btn">View Certificate</a>
+                    <a href="images/stanford_ml.jpg" download="Stanford_ML_Certificate.pdf" class="view-btn">View Certificate</a>
                 </div>
             </div>
 
@@ -189,7 +198,7 @@
                         <li>Learn about the ethical implications and societal impact of using Generative AI tools</li>
                         <li>Develop skills to apply Generative AI models effectively in real-world scenarios</li>
                     </ul>
-                    <a href="images/microsoft_genai.jpg" view="Microsoft_GenAI_Certificate" class="view-btn">View Certificate</a>
+                    <a href="images/microsoft_genai.jpg" download="Microsoft_GenAI_Certificate.pdf" class="view-btn">View Certificate</a>
                 </div>
             </div>
 
@@ -205,7 +214,7 @@
                         <li>Learn to effectively use essential software tools like Excel, Power BI, and SQL for data manipulation, management, and visualization, enhancing your analytical skills</li>
                         <li>Master data visualization methods to present and support data-driven decision-making</li>
                     </ul>
-                    <a href="images/microsoft_data_analysis.jpg" view="Microsoft_Data_Analysis_Certificate" class="view-btn">View Certificate</a>
+                    <a href="images/microsoft_data_analysis.jpg" download="Microsoft_Data_Analysis_Certificate.pdf" class="view-btn">View Certificate</a>
                 </div>
             </div>
 
@@ -221,7 +230,7 @@
                         <li>Explored GitHub Copilot to enhance coding efficiency with AI-driven suggestions</li>
                         <li>Applied GitHub features through real-world projects, strengthening my developer portfolio and job market readiness</li>
                     </ul>
-                    <a href="images/github_professional.jpg" view="GitHub_Professional_Certificate" class="view-btn">View Certificate</a>
+                    <a href="images/github_professional.jpg" download="GitHub_Professional_Certificate.pdf" class="view-btn">View Certificate</a>
                 </div>
             </div>
 
@@ -237,7 +246,7 @@
                         <li>Mastered responsible AI use by addressing ethical considerations and privacy concerns</li>
                         <li>Learned to leverage AI-powered tools for actionable marketing insights and improved decision-making</li>
                     </ul>
-                    <a href="images/edureka_genai.jpg" view="Edureka_GenAI_Certificate" class="view-btn">View Certificate</a>
+                    <a href="images/edureka_genai.jpg" download="Edureka_GenAI_Certificate.pdf" class="view-btn">View Certificate</a>
                 </div>
             </div>
         </div>
