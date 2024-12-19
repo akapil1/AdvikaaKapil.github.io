@@ -14,49 +14,93 @@ body {
     padding-top: 80px; /* Adds space for fixed navbar */
 }
 
-/* Navigation Bar Styling */
-header {
-    background: linear-gradient(to right, #FFB6C1, #FFDAB9, #FFFAE3); /* Gradient background */
-    position: fixed; /* Fix the navbar at the top */
-    top: 0; /* Align to the top of the viewport */
-    left: 0; /* Align to the left of the viewport */
-    width: 100%; /* Make it span the full width */
+/* Navbar container */
+.navbar {
     display: flex;
-    justify-content: center; /* Center-align navigation tools */
     align-items: center;
-    padding: 0.5rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
-    z-index: 1000; /* Ensure the navbar stays on top of other elements */
-}
-.logo h1 {
-    font-family: 'Playfair Display', serif;
-    color: #333;
-    margin: 0;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background-color: #f9e2e2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-.nav-links {
+/* Logo styling */
+.logo img {
+    width: 150px; /* Adjust logo size */
+    height: auto;
+    margin-left: 10px; /* Add some spacing between the logo and nav-links */
+}
+
+/* Hamburger icon */
+.hamburger {
     display: flex;
-    gap: 2rem; /* Space between links */
-    list-style: none; /* Remove bullets */
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Position the hamburger icon to the right margin */
+    top: 50%; /* Center vertically within the navbar */
+    transform: translateY(-50%); /* Adjust vertical centering */
+}
+
+.hamburger span {
+    background-color: #333;
+    height: 3px;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* Navigation links (hidden by default) */
+.nav-links {
+    display: none; /* Initially hidden */
+    flex-direction: row; /* Horizontal layout */
+    position: absolute;
+    top: 50%; /* Vertically align in the center of the screen */
+    left: 50%; /* Horizontally center on the screen */
+    transform: translate(-50%, -50%); /* Offset for centering */
+    background: linear-gradient(90deg, rgb(238, 136, 136), #f59e75, #f1cda4); /* Gradient background */
+    padding: 5px 20px;
+    z-index: 999;
+    width: auto; /* Only takes as much space as the links */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333; /* Dark text color */
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    color: #333;
+    font-size: 0.95rem;
+    margin: 0 10px;
+    padding: 10px;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    background-color: #FFDDD2; /* Light background on hover */
-    color: #D64550;
+    color: #ff5722;
 }
 
+/* Show navigation bar when active */
+.nav-links.active {
+    display: flex;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo img {
+        width: 40px; /* Adjusted logo size for smaller screens */
+    }
+    .hamburger {
+        right: 10px; /* Adjust spacing for smaller screens */
+    }
+}
+
+/* Body padding */
 body {
     margin: 0;
     padding: 0;
@@ -69,6 +113,7 @@ section {
     padding: 5rem 2rem; /* Extra padding to account for fixed navbar */
     margin-top: 80px; /* Ensures content starts below the header */
 }
+
 
 /* Home Section Styling */
 .home-section {
@@ -280,86 +325,109 @@ section {
     cursor: pointer;
 }
 
-/* work experience Section */
-.work-experience-section {
+/* Work Experience Section */
+.exposure-section {
     position: relative;
-    padding: 40px 15px;
+    padding: 60px 75px; /* Increased padding */
     background-color: #f6edef;
+    text-align: center;
 }
 
+/* Timeline Container */
 .timeline-container {
     position: relative;
     width: 100%;
-    margin-top: 10px;
+    overflow-x: auto;
+    padding-top: 80px; /* Added space above timeline */
+    padding-bottom: 80px; /* Added space below timeline */
 }
 
+/* Timeline */
 .timeline {
-    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 20px 0;
-    border-inline: 4px dashed #ba4e5e;
+    flex-direction: row;
+    justify-content: space-evenly; /* More even spacing */
+    align-items: flex-start; /* Align to the start to prevent cutting */
+    position: relative;
+    padding: 60px 0; /* Vertical spacing for visibility */
+    min-width: 100%; /* Ensure the timeline is wide enough */
 }
 
+/* Timeline::before */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #ba4e5e;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Timeline Item */
 .timeline-item {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    margin: 40px 0;
-    transition: transform 0.3s ease;
+    flex: 0 0 auto; /* Adjusting flex to avoid cutting */
+    text-align: center;
+    z-index: 2;
+    min-width: 220px; /* Minimum width for each item */
 }
 
+/* Timeline Dot */
 .timeline-dot {
     width: 20px;
     height: 20px;
-    border-radius: 100%;
-    border: 3px dashed #ba4e5e;
+    background-color: white;
+    border: 4px solid #ba4e5e;
+    border-radius: 50%;
     position: absolute;
-    top: -20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Cloud Box (Card) */
+.cloud-box {
+    background-color: #f56a6a;
+    color: white;
+    padding: 20px 15px; /* Increased padding for visibility */
+    border-radius: 10px;
+    width: 220px; /* Slightly wider cards */
+    opacity: 0.95;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Top and Bottom Placement */
+.cloud-box.top {
+    position: absolute;
+    bottom: calc(200% + 30px); /* More space above */
     left: 50%;
     transform: translateX(-50%);
 }
 
-.cloud-box {
-    position: relative;
-    background-color: #f56a6a;  /* Dark shade for minimized state */
-    padding: 10px;
-    border-radius: 10px;
-    width: 180px;
-    text-align: center;
-    opacity: 0.8;
-    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, background-color 0.3s ease;
-    transform: scale(1);
+.cloud-box.bottom {
+    position: absolute;
+    top: calc(100% + 30px); /* More space below */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.cloud-box .job-title {
-    font-weight: bold;
-    font-size: 14px;
-    color: white;
+/* Timeline Item Active State */
+.timeline-item.active .cloud-box,
+.cloud-box:hover {
+    transform: scale(1.2); /* Enlarging effect */
+    background-color: #ee6b6b;
 }
 
-.cloud-box .timeline-date {
-    font-size: 12px;
-    color: white;
-}
-
-.timeline-item.active .cloud-box {
-    transform: scale(1.5);
-    opacity: 1;
-    width: 250px;
-    background-color: #ee6b6b;  /* Light green shade for enlarged state */
-}
-
-.timeline-item .cloud-box {
-    padding: 15px;
-    transition: all 0.3s ease-in-out;
-}
-
+/* Experience Details Modal */
 .experience-details {
     display: none;
     position: fixed;
@@ -394,16 +462,16 @@ section {
     padding: 60px 20px;
     text-align: center;
     position: relative; /* Keep the title in place while scrolling */
-    z-index: 5; /* Ensure the title stays on top */
+    z-index: 1; /* Ensure the title stays on top */
 }
 
 #certifications h2 {
     font-size: 2.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     color: #cc6a6a; /* Deep peach */
     position: sticky; /* Keeps the title fixed while scrolling */
     top: 60px; /* Adjust this value to keep the title visible */
-    z-index: 2; /* Ensure title is above the certification cards */
+    z-index: 1; /* Ensure title is above the certification cards */
 }
 
 .certifications-container {
@@ -422,7 +490,7 @@ section {
 .certification-card {
     background-color: #fef7f6; /* Peachy Beige */
     border-radius: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(11, 10, 10, 0.1);
     overflow: hidden;
     width: 300px;
     flex-shrink: 0;
@@ -514,3 +582,4 @@ section {
 .certifications-container::-webkit-scrollbar-track {
     background-color: #fdf4f2; /* Light pink */
 }
+
