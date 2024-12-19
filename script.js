@@ -1,6 +1,9 @@
+
 // Function to toggle between showing the details and minimizing the box
 function toggleDetails(id) {
     const timelineItems = document.querySelectorAll(".timeline-item");
+    
+    // Close all other items and toggle the selected item
     timelineItems.forEach(item => {
         if (item.id !== id) {
             item.classList.remove("active");
@@ -8,15 +11,26 @@ function toggleDetails(id) {
     });
 
     const selectedItem = document.getElementById(id);
-    selectedItem.classList.toggle("active");
+    const isActive = selectedItem.classList.toggle("active");
 
-    if (selectedItem.classList.contains("active")) {
+    if (isActive) {
         showDetails(id);
     } else {
         closeDetails();
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    // Toggle navigation menu visibility
+    hamburgerMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+});
+
+// Function to display the details in the modal
 function showDetails(experience) {
     const details = {
         'writing-coach': {
@@ -78,6 +92,7 @@ function showDetails(experience) {
     const experienceDetails = details[experience];
 
     if (experienceDetails) {
+        // Populate the modal with details
         const experienceCard = document.getElementById('experience-card');
         experienceCard.innerHTML = `
             <h3>${experienceDetails.title}</h3>
@@ -86,15 +101,23 @@ function showDetails(experience) {
             <ul>
                 ${experienceDetails.description.map(item => `<li>${item}</li>`).join('')}
             </ul>
-            <a href="#" class="close-btn" onclick="closeDetails(event)">Close</a>
+            <button class="close-btn" onclick="closeDetails(event)">Close</button>
         `;
+        
+        // Display the modal
         const modal = document.querySelector('.experience-details');
         modal.style.display = 'flex';
     }
 }
 
+// Function to close the details modal
 function closeDetails(event) {
-    event.preventDefault(); // Prevent default behavior of the link
+    if (event) event.preventDefault(); // Prevent default behavior if triggered by a link
     const modal = document.querySelector('.experience-details');
     modal.style.display = 'none';
+
+    // Remove active class from any open timeline items
+    const timelineItems = document.querySelectorAll(".timeline-item");
+    timelineItems.forEach(item => item.classList.remove("active"));
 }
+
